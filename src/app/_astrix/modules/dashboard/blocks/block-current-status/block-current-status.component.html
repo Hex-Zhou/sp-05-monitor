@@ -1,0 +1,32 @@
+<div class="row gap-5">
+	<div class="col-lg col-12">
+		<ng-container *ngTemplateOutlet="card; context: { item: StatusItems.success }"></ng-container>
+	</div>
+	<div class="col-lg col-12">
+		<ng-container *ngTemplateOutlet="card; context: { item: StatusItems.warning }"></ng-container>
+	</div>
+	<div class="col-lg col-12">
+		<ng-container *ngTemplateOutlet="card; context: { item: StatusItems.danger }"></ng-container>
+	</div>
+</div>
+
+<!-- ng-template -->
+<!-- ng-template -->
+<!-- ng-template -->
+<ng-template #card let-item="item">
+	<div [class]="'card hoverable bg-' + item.class">
+		<div class="card-body my-3">
+			<div [class]="'card-title fw-bolder fs-1 d-block text-white'">{{ item.title }}</div>
+			<div class="fw-bolder">
+				<span class="fs-1 text-white">{{ item.total }}</span>
+				<span class="text-white ms-3 fw-bolder fs-3">個</span>
+			</div>
+			<div class="h-8px mt-3 w-100 bg-white bg-opacity-50 rounded">
+				<div
+					class="rounded h-8px bg-dark"
+					role="progressbar"
+					[style]="'width: ' + item.percent + '%'"></div>
+			</div>
+		</div>
+	</div>
+</ng-template>

@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/sass/style.dark.scss";
+// @import "./assets/sass/style.dark.scss";
+
+// Replace above style with this SCSS file to enable dark mode styles
+//@import "./assets/sass/style.dark";
+
+@import "./assets/sass/style.angular.scss";
+
+body {
+  font-family: 'Poppins', '微軟正黑體';
+}
