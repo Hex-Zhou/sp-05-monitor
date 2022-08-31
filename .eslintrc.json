@@ -29,7 +29,8 @@
 						"style": "kebab-case"
 					}
 				],
-				"@angular-eslint/no-empty-lifecycle-method": "off"
+				"@angular-eslint/no-empty-lifecycle-method": "off",
+				"@angular-eslint/template/no-negated-async": "off"
 			}
 		},
 		{

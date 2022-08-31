@@ -1,0 +1,27 @@
+<div class="panel h-100">
+	<app-shared-common-card [displayList]="['header']" title="圓餅圖">
+		<!--The content below is only a placeholder and can be replaced.-->
+		<div body>
+			<div #chartRef id="kt_charts_widget_1_chart" [style.height]="'350px'">
+				<apx-chart
+					[series]="chartOptions.series"
+					[chart]="chartOptions.chart"
+					[xaxis]="chartOptions.xaxis"
+					[yaxis]="chartOptions.yaxis"
+					[dataLabels]="chartOptions.dataLabels"
+					[stroke]="chartOptions.stroke"
+					[legend]="chartOptions.legend"
+					[fill]="chartOptions.fill"
+					[states]="chartOptions.states"
+					[tooltip]="chartOptions.tooltip"
+					[labels]="chartOptions.labels"
+					[colors]="chartOptions.colors"
+					[markers]="chartOptions.markers"
+					[plotOptions]="chartOptions.plotOptions"></apx-chart>
+			</div>
+			<div>
+				<!-- <span class="text-dark fs-3 fw-bolder">成功</span> -->
+			</div>
+		</div>
+	</app-shared-common-card>
+</div>

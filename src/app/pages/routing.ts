@@ -1,6 +1,11 @@
+import { BackPack } from "./../_astrix/shared/common/backpack.class";
 import { Routes } from "@angular/router";
 
 const Routing: Routes = [
+	{
+		path: "dev",
+		loadChildren: () => import("../_astrix/astrix.module").then((m) => m.AstrixModule),
+	},
 	{
 		path: "dashboard",
 		loadChildren: () => import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
@@ -34,7 +39,7 @@ const Routing: Routes = [
 	},
 	{
 		path: "",
-		redirectTo: "/dashboard",
+		redirectTo: BackPack.enums.url.dashboard,
 		pathMatch: "full",
 	},
 	{

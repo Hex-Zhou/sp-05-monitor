@@ -5,9 +5,10 @@ import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { PageA1Component } from "./pages/page-a1/page-a1.component";
 import { BlockCurrentStatusComponent } from "./blocks/block-current-status/block-current-status.component";
 import { BlockDamagedSiteListComponent } from "./blocks/block-damaged-site-list/block-damaged-site-list.component";
+import { BlockStatusPieChartComponent } from './blocks/block-status-pie-chart/block-status-pie-chart.component';
 
 @NgModule({
-	declarations: [PageA1Component, BlockCurrentStatusComponent, BlockDamagedSiteListComponent],
+	declarations: [PageA1Component, BlockCurrentStatusComponent, BlockDamagedSiteListComponent, BlockStatusPieChartComponent],
 	imports: [CommonModule, DashboardRoutingModule, BackPack.commonModules],
 	exports: [],
 })

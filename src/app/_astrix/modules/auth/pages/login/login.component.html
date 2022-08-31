@@ -156,7 +156,7 @@
 								<span class="spinner-border spinner-border-sm align-middle ms-2"></span>
 							</span>
 						</ng-container>
-						<ng-container *ngIf="!(isLoading$ | async)">
+						<ng-container *ngIf="(isLoading$ | async) === false">
 							<span class="indicator-label">Continue</span>
 						</ng-container>
 					</button>

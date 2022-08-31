@@ -3,10 +3,10 @@ import { Routes, RouterModule } from "@angular/router";
 import { AuthGuard } from "./modules/auth/services/auth.guard";
 
 export const routes: Routes = [
-	{
-		path: "auth",
-		loadChildren: () => import("./modules/auth/auth.module").then((m) => m.AuthModule),
-	},
+	// {
+	// 	path: "auth",
+	// 	loadChildren: () => import("./modules/auth/auth.module").then((m) => m.AuthModule),
+	// },
 	{
 		path: "error",
 		loadChildren: () => import("./modules/errors/errors.module").then((m) => m.ErrorsModule),
@@ -22,8 +22,8 @@ export const routes: Routes = [
 			import("./_astrix/modules/dashboard/dashboard.module").then((m) => m.DashboardModule),
 	},
 	{
-		path: "dev",
-		loadChildren: () => import("./_astrix/astrix.module").then((m) => m.AstrixModule),
+		path: "auth",
+		loadChildren: () => import("./_astrix/modules/auth/auth.module").then((m) => m.AuthModule),
 	},
 	{ path: "**", redirectTo: "error/404" },
 ];

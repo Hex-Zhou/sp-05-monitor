@@ -1,4 +1,44 @@
 <app-shared-common-card
 	[displayList]="['header', 'subtitle']"
 	title="異常網站列表"
-	subtitle="35分前更新"></app-shared-common-card>
+	subtitle="35分前更新">
+	<div body class="table-responsive">
+		<!-- begin::Table -->
+		<table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+			<!-- begin::Table head -->
+			<thead>
+				<tr class="fw-bolder text-muted">
+					<th class="min-w-100px">網站名稱</th>
+					<th class="min-w-100px">更新時間</th>
+					<th class="min-w-50px">連線狀態</th>
+				</tr>
+			</thead>
+			<!-- end::Table head -->
+			<!-- begin::Table body -->
+			<tbody>
+				<ng-container *ngFor="let site of websiteList">
+					<tr>
+						<td>
+							<a href="{{ site.link }}" class="text-dark fw-bolder text-hover-primary fs-6">
+								{{ site.title }}
+							</a>
+						</td>
+						<td>
+							<a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">
+								{{ site.time }}
+							</a>
+							<span class="text-muted fw-bold text-muted d-block fs-7">最後更新</span>
+						</td>
+						<td>
+							<span *ngIf="site.status === 'good'" class="pointer badge badge-light-success">正常</span>
+							<span *ngIf="site.status === 'bad'" class="pointer badge badge-light-danger">異常</span>
+							<span *ngIf="site.status === 'expired'" class="pointer badge badge-light-info">SSL過期</span>
+						</td>
+					</tr>
+				</ng-container>
+			</tbody>
+			<!-- end::Table body -->
+		</table>
+		<!-- end::Table -->
+	</div>
+</app-shared-common-card>
