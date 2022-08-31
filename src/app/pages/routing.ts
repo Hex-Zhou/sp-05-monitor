@@ -2,10 +2,6 @@ import { Routes } from "@angular/router";
 
 const Routing: Routes = [
 	{
-		path: "dev",
-		loadChildren: () => import("../_astrix/astrix.module").then((m) => m.AstrixModule),
-	},
-	{
 		path: "dashboard",
 		loadChildren: () => import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
 	},

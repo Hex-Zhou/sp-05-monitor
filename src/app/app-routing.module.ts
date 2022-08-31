@@ -22,7 +22,7 @@ export const routes: Routes = [
 			import("./_astrix/modules/dashboard/dashboard.module").then((m) => m.DashboardModule),
 	},
 	{
-		path: "astrix",
+		path: "dev",
 		loadChildren: () => import("./_astrix/astrix.module").then((m) => m.AstrixModule),
 	},
 	{ path: "**", redirectTo: "error/404" },

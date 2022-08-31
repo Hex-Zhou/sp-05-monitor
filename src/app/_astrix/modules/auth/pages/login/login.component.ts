@@ -1,10 +1,8 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Subscription, Observable } from "rxjs";
-import { first } from "rxjs/operators";
-import { UserModel } from "../../models/user.model";
-import { AuthService } from "../../services/auth.service";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Observable, Subscription, first } from "rxjs";
+import { AuthService, UserModel } from "src/app/modules/auth";
 
 @Component({
 	selector: "app-login",
@@ -15,7 +13,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 	// KeenThemes mock, change it to:
 	defaultAuth: any = {
 		email: "admin@demo.com",
-		password: "demo",
+		password: "12345",
 	};
 	loginForm: FormGroup;
 	hasError: boolean;
@@ -40,7 +38,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		this.initForm();
-		// get return url from route parameters or default to '/'
 		this.returnUrl = this.route.snapshot.queryParams["returnUrl".toString()] || "/";
 	}
 

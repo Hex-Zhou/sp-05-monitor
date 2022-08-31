@@ -4,9 +4,10 @@ import { NgModule } from "@angular/core";
 
 import { DashboardModule } from "./modules/dashboard/dashboard.module";
 import { AstrixRoutingModule } from "./astrix-routing.module";
+import { AuthModule } from "./modules/auth/auth.module";
 
 @NgModule({
 	declarations: [],
-	imports: [DashboardModule, CommonModule, AstrixRoutingModule, BackPack.commonModules],
+	imports: [AuthModule, DashboardModule, CommonModule, AstrixRoutingModule, BackPack.commonModules],
 })
 export class AstrixModule {}

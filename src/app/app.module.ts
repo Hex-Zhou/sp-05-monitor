@@ -12,7 +12,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AuthService } from "./modules/auth/services/auth.service";
 // #fake-start#
-import { DashboardModule } from "./_astrix/modules/dashboard/dashboard.module";
+import { AuthModule } from "./_astrix/modules/auth/auth.module";
 import { FakeAPIService } from "./_fake/fake-api.service";
 // #fake-end#
 
