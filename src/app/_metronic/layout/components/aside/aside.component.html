@@ -2,14 +2,14 @@
 <div class="aside-logo flex-column-auto" id="kt_aside_logo">
 	<!-- begin::Logo -->
 	<ng-container *ngIf="asideTheme === 'dark'">
-		<a routerLink="/dashboard">
-			<img alt="Logo" class="h-25px logo" src="./assets/media/logos/logo-1-dark.svg" />
+		<a [routerLink]="ROUTE.dashboard">
+			<img alt="Logo" class="h-25px logo" [src]="PIC.logoBig" />
 		</a>
 	</ng-container>
 
 	<ng-container *ngIf="asideTheme === 'light'">
 		<a routerLink="/dashboard">
-			<img alt="Logo" class="h-25px logo" src="./assets/media/logos/logo-1.svg" />
+			<img alt="Logo" class="h-25px logo" [src]="PIC.logoBig" />
 		</a>
 	</ng-container>
 
@@ -49,7 +49,9 @@
 			id="#kt_aside_menu"
 			data-kt-menu="true"
 			class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500">
-			<app-aside-menu id="asideMenu"></app-aside-menu>
+			<!-- <app-aside-menu id="asideMenu"></app-aside-menu> -->
+			<app-astrix-aside-menu1></app-astrix-aside-menu1>
+			<!-- 飛雷神 -->
 		</div>
 	</div>
 </div>

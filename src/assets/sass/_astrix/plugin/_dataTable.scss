@@ -1,0 +1,33 @@
+@import "../var";
+@import "../util";
+
+.DT__footer.DT_type_A {
+  display: flex;
+  justify-content: space-between;
+
+  @include md {
+    flex-direction: column;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: space-between;
+
+    .dataTables_info {
+      color: #fff;
+      padding: 0;
+    }
+
+    .dataTables_length {
+      select {
+        color: #fff;
+      }
+
+      option {
+        color: #000;
+      }
+    }
+  }
+}

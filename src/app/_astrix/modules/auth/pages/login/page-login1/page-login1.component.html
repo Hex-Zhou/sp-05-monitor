@@ -1,0 +1,16 @@
+<div
+	class="d-flex min-vh-100 flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-cover bgi-attachment-fixed"
+	[style]="'background-image: url(' + PIC.bgi_dark + ')'">
+	<!--begin::Content-->
+	<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-10">
+		<a routerLink="/" class="mb-0">
+			<img alt="Logo" [src]="PIC.logoBig" class="h-100px" />
+		</a>
+	</div>
+	<app-login-form1></app-login-form1>
+	<div class="d-flex flex-center flex-column-auto p-10">
+		<div class="d-flex align-items-center fw-bold fs-6">
+			<a class="text-muted text-hover-primary px-2 cursor-pointer">跳至前台</a>
+		</div>
+	</div>
+</div>

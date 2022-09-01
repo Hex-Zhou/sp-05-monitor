@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from "@angular/core";
+import { BackPack } from "../../common/backpack.class";
 /**
  * ng-content 可填入 footer , body , toolbar
  */
@@ -10,12 +11,13 @@ import { ChangeDetectorRef, Component, Input, OnInit } from "@angular/core";
 export class SharedCommonCardComponent implements OnInit {
 	@Input() title: string = "標題";
 	@Input() subtitle: string = "子標題";
+
 	/**
 	 * ```
 	 * 用途: 輸入 打算顯示的元件名
 	 * ```
 	 */
-	@Input() displayList: DisplayItem[] = [];
+	@Input() displayList: Partial<keyof iDisplay>[] = [];
 	/**
 	 * ```
 	 * 用途: 所有用來判別顯示的boolean
@@ -25,7 +27,6 @@ export class SharedCommonCardComponent implements OnInit {
 	//
 	constructor(private cdr: ChangeDetectorRef) {}
 	ngOnInit(): void {
-		console.log(this.isDisplay);
 		this._setIsDisplayTrue();
 	}
 	/**
@@ -49,9 +50,8 @@ interface iDisplay {
 	toolbar: boolean;
 	footer: boolean;
 }
-type DisplayItem = "header" | "subtitle" | "toolbar" | "footer";
 
-const initIsDisplay: iDisplay = {
+const initIsDisplay: iDisplay & Omit<any, keyof iDisplay> = {
 	header: false,
 	subtitle: false,
 	toolbar: false,

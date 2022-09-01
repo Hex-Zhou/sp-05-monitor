@@ -3,14 +3,15 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, Subscription, first } from "rxjs";
 import { AuthService, UserModel } from "src/app/modules/auth";
+import { BackPack } from "src/app/_astrix/shared/common/backpack.class";
 
 @Component({
-	selector: "app-login",
-	templateUrl: "./login.component.html",
-	styleUrls: ["./login.component.scss"],
+	selector: "app-login-form1",
+	templateUrl: "./login-form1.component.html",
+	styleUrls: ["./login-form1.component.scss"],
 })
-export class LoginComponent implements OnInit, OnDestroy {
-	// KeenThemes mock, change it to:
+export class LoginForm1Component implements OnInit, OnDestroy {
+	PIC = BackPack.enums.pic;
 	defaultAuth: any = {
 		email: "admin@demo.com",
 		password: "demo",
@@ -19,10 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 	hasError: boolean;
 	returnUrl: string;
 	isLoading$: Observable<boolean>;
-
-	// private fields
 	private unsubscribe: Subscription[] = []; // Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
-
 	constructor(
 		private fb: FormBuilder,
 		private authService: AuthService,
@@ -34,7 +32,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 			this.router.navigate(["/"]);
 		}
 	}
-
 	ngOnInit(): void {
 		this.initForm();
 		this.returnUrl = this.route.snapshot.queryParams["returnUrl".toString()] || "/";
@@ -42,7 +39,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 	get f() {
 		return this.loginForm.controls;
 	}
-
 	initForm() {
 		this.loginForm = this.fb.group({
 			email: [
@@ -60,7 +56,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 			],
 		});
 	}
-
 	submit() {
 		this.hasError = false;
 		const loginSubscr = this.authService

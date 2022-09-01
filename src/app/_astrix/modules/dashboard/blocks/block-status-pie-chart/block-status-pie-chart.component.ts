@@ -1,3 +1,4 @@
+import { BackPack } from "./../../../../shared/common/backpack.class";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { ApexNonAxisChartSeries, ApexChart, ApexResponsive, ChartComponent } from "ng-apexcharts";
 import { getCSSVariableValue } from "src/app/_metronic/kt/_utils";
@@ -15,39 +16,14 @@ export class BlockStatusPieChartComponent implements OnInit {
 	}
 
 	ngOnInit(): void {}
-
-	initChart() {
-		this.chartOptions = {
-			series: [44, 55, 13, 43, 22],
-			chart: {
-				width: 380,
-				type: "pie",
-			},
-			labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
-			responsive: [
-				{
-					breakpoint: 480,
-					options: {
-						chart: {
-							width: 200,
-						},
-						legend: {
-							position: "bottom",
-						},
-					},
-				},
-			],
-		};
-	}
 }
 
 function getChartOptions(height: number) {
 	const labelColor = getCSSVariableValue("--bs-gray-500");
 	const borderColor = getCSSVariableValue("--bs-gray-200");
-
-	const successColor = getCSSVariableValue("--bs-success");
-	const warningColor = getCSSVariableValue("--bs-warning");
-	const dangerColor = getCSSVariableValue("--bs-danger");
+	const successColor = BackPack.getColor("success");
+	const warningColor = BackPack.getColor("warning");
+	const dangerColor = BackPack.getColor("danger");
 	return {
 		series: [90, 10, 5],
 		chart: {
@@ -68,6 +44,7 @@ function getChartOptions(height: number) {
 		},
 		legend: {
 			show: true,
+			fontSize: "16px",
 		},
 		dataLabels: {
 			enabled: false,
@@ -104,7 +81,7 @@ function getChartOptions(height: number) {
 		},
 		tooltip: {
 			style: {
-				fontSize: "12px",
+				fontSize: "16px",
 			},
 			y: {
 				formatter: function (val: number) {
@@ -113,14 +90,5 @@ function getChartOptions(height: number) {
 			},
 		},
 		colors: [successColor, warningColor, dangerColor],
-		grid: {
-			borderColor: borderColor,
-			strokeDashArray: 4,
-			yaxis: {
-				lines: {
-					show: true,
-				},
-			},
-		},
 	};
 }

@@ -39,7 +39,7 @@ const Routing: Routes = [
 	},
 	{
 		path: "",
-		redirectTo: BackPack.enums.url.dashboard,
+		redirectTo: BackPack.enums.route.dashboard,
 		pathMatch: "full",
 	},
 	{

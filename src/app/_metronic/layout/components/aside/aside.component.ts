@@ -1,3 +1,4 @@
+import { BackPack } from "./../../../../_astrix/shared/common/backpack.class";
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { NavigationCancel, NavigationEnd, Router } from "@angular/router";
 import { Subscription } from "rxjs";
@@ -16,6 +17,8 @@ import {
 	styleUrls: ["./aside.component.scss"],
 })
 export class AsideComponent implements OnInit, OnDestroy {
+	PIC = BackPack.enums.pic;
+	ROUTE = BackPack.enums.route;
 	asideTheme: string = "";
 	asideMinimize: boolean = false;
 	asideMenuCSSClasses: string = "";

@@ -12,8 +12,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AuthService } from "./modules/auth/services/auth.service";
 // #fake-start#
-import { AuthModule } from "./_astrix/modules/auth/auth.module";
 import { FakeAPIService } from "./_fake/fake-api.service";
+import { SiteMgmtModule } from "./_astrix/modules/site-mgmt/site-mgmt.module";
 // #fake-end#
 
 function appInitializer(authService: AuthService) {

@@ -1,10 +1,12 @@
-import { BackPack } from "./../../shared/common/backpack.class";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { LoginComponent } from "./pages/login/login.component";
-const url = BackPack.enums.url;
+import { BackPack } from "./../../shared/common/backpack.class";
+import { PageLogin1Component } from "./pages/login/page-login1/page-login1.component";
+import { PageLogin2Component } from "./pages/login/page-login2/page-login2.component";
+const url = BackPack.enums.route;
 const routes: Routes = [
-	{ path: "login", component: LoginComponent },
+	{ path: "login", component: PageLogin1Component },
+	{ path: "login2", component: PageLogin2Component },
 	{
 		path: "",
 		redirectTo: url.dashboard,

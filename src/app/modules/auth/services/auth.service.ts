@@ -60,7 +60,7 @@ export class AuthService implements OnDestroy {
 
 	logout() {
 		localStorage.removeItem(this.authLocalStorageToken);
-		this.router.navigate([BackPack.enums.url.login], {
+		this.router.navigate([BackPack.enums.route.login], {
 			queryParams: {},
 		});
 	}

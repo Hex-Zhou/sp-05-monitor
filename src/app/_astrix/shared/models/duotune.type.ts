@@ -1,0 +1,18 @@
+export type DuoTuneList =
+	| "abstract"
+	| "arrows"
+	| "art"
+	| "coding"
+	| "communication"
+	| "ecommerce"
+	| "electronics"
+	| "files"
+	| "finance"
+	| "general"
+	| "graphs"
+	| "layouts"
+	| "maps"
+	| "medicine"
+	| "social"
+	| "technology"
+	| "text";
