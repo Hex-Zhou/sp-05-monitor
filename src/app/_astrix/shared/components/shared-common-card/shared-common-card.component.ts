@@ -9,7 +9,7 @@ import { BackPack } from "../../common/backpack.class";
 	styleUrls: ["./shared-common-card.component.scss"],
 })
 export class SharedCommonCardComponent implements OnInit {
-	@Input() title: string = "標題";
+	@Input() mainTitle: string = "標題";
 	@Input() subtitle: string = "子標題";
 
 	/**

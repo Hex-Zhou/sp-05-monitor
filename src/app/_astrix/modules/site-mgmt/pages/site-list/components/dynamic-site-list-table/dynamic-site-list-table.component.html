@@ -1,5 +1,6 @@
 <div class="table-responsive">
 	<!-- begin::Table -->
+
 	<table
 		[dtOptions]="dtOptions"
 		datatable
@@ -25,6 +26,19 @@
 					<td>
 						<a class="text-dark fw-bolder text-hover-primary fs-6">
 							{{ site.link }}
+						</a>
+					</td>
+					<td class="d-flex gap-3">
+						<a
+							[href]="site.link"
+							class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+							<span [inlineSVG]="getDuoTune('arrows', 69)" class="svg-icon svg-icon-1 me-1"></span>
+						</a>
+						<a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+							<span [inlineSVG]="getDuoTune('art', 5)" class="svg-icon svg-icon-1 me-1"></span>
+						</a>
+						<a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+							<span [inlineSVG]="getDuoTune('abstract', 12)" class="svg-icon svg-icon-1 me-1"></span>
 						</a>
 					</td>
 				</tr>
