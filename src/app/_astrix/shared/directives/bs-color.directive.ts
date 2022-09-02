@@ -1,4 +1,4 @@
-import { BSAllColor } from "./../models/bs-all-color.type";
+import { tyBSColor } from "./../models/bs-all-color.type";
 import {
 	Directive,
 	ElementRef,
@@ -13,8 +13,8 @@ import {
 	selector: "[appBsColor]",
 })
 export class BsColorDirective implements OnChanges {
-	@Input() textColor: BSAllColor | null = null;
-	@Input() bgColor: BSAllColor | null = null;
+	@Input() textColor: tyBSColor | null = null;
+	@Input() bgColor: tyBSColor | null = null;
 	@Input() light: boolean = false;
 	constructor(private r2: Renderer2, private elemRef: ElementRef) {}
 	ngOnChanges(changes: SimpleChanges): void {

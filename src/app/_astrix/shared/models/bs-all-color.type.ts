@@ -1,4 +1,4 @@
-export type BSAllColor =
+export type tyBSColor =
 	| "primary"
 	| "white"
 	| "light"

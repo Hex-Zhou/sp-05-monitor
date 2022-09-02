@@ -11,6 +11,6 @@ const dataTablesConfig_A: DataTables.Settings = {
 	},
 };
 
-export const dataTableConfig = {
+export const dataTableConfigs = {
 	a: dataTablesConfig_A,
 };

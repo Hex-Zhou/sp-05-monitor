@@ -1,6 +1,7 @@
-import { RoutePathEnum } from "../common/enum/route-path.enum";
-import { getDuotune } from "../common/function/duotune.func";
-import { iRouteTree } from "../models/route-tree.model";
+import { iRouteTree } from "../../models/route-tree.model";
+import { RoutePathEnum } from "../enum/route-path.enum";
+import { getDuotune } from "../function/duotune.func";
+
 const route = RoutePathEnum;
 export const myRoutesTree: iRouteTree[] = [
 	{ title: "首頁", link: route.dashboard, root: true, icon: getDuotune("abstract", 20) },

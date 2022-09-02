@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SiteListComponent } from './site-list.component';
+import { PageSiteListComponent } from './page-site-list.component';
 
-describe('SiteListComponent', () => {
-  let component: SiteListComponent;
-  let fixture: ComponentFixture<SiteListComponent>;
+describe('PageSiteListComponent', () => {
+  let component: PageSiteListComponent;
+  let fixture: ComponentFixture<PageSiteListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SiteListComponent ]
+      declarations: [ PageSiteListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SiteListComponent);
+    fixture = TestBed.createComponent(PageSiteListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

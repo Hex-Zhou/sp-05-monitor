@@ -1,50 +1,49 @@
 <div class="table-responsive">
-	<!-- begin::Table -->
-
 	<table
 		[dtOptions]="dtOptions"
 		datatable
-		class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
-		<!-- begin::Table head -->
+		class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3 fs-4">
 		<thead>
 			<tr class="fw-bolder text-muted">
+				<th class="min-w-20px">網站名稱</th>
 				<th class="min-w-100px">網站名稱</th>
 				<th class="min-w-100px">網址</th>
 				<th class="min-w-100px">動作</th>
 			</tr>
 		</thead>
-		<!-- end::Table head -->
-		<!-- begin::Table body -->
 		<tbody>
-			<ng-container *ngFor="let site of websiteList">
+			<ng-container *ngFor="let site of list">
 				<tr>
 					<td>
-						<a class="text-dark fw-bolder text-hover-primary fs-6">
+						<a class="text-muted fw-bolder text-hover-primary">
+							{{ site.id }}
+						</a>
+					</td>
+					<td>
+						<a class="text-dark fw-bolder text-hover-primary">
 							{{ site.title }}
 						</a>
 					</td>
 					<td>
-						<a class="text-dark fw-bolder text-hover-primary fs-6">
+						<a class="text-muted fw-bolder text-hover-primary">
 							{{ site.link }}
 						</a>
 					</td>
 					<td class="d-flex gap-3">
-						<a
-							[href]="site.link"
-							class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+						<a [href]="site.link" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
 							<span [inlineSVG]="getDuoTune('arrows', 69)" class="svg-icon svg-icon-1 me-1"></span>
 						</a>
-						<a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+						<a (click)="clickEdit(site)" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
 							<span [inlineSVG]="getDuoTune('art', 5)" class="svg-icon svg-icon-1 me-1"></span>
 						</a>
-						<a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+						<a
+							(click)="clickDelete(site.id!)"
+							class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
 							<span [inlineSVG]="getDuoTune('abstract', 12)" class="svg-icon svg-icon-1 me-1"></span>
 						</a>
 					</td>
 				</tr>
 			</ng-container>
 		</tbody>
-		<!-- end::Table body -->
 	</table>
-	<!-- end::Table -->
 </div>

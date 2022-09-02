@@ -1,5 +1,6 @@
-import { myRoutesTree } from "./../data/route-tree.data";
-import { BSAllColor } from "./../models/bs-all-color.type";
+import { ngbModalOptions } from "./config/ngbModal.config";
+import { myRoutesTree } from "./data/route-tree.data";
+import { tyBSColor } from "./../models/bs-all-color.type";
 import { RoutePathEnum } from "./enum/route-path.enum";
 import { PicPathEnum } from "./enum/pic-path.enum";
 import { TranslateModule } from "@ngx-translate/core";
@@ -9,24 +10,35 @@ import { InlineSVGModule } from "ng-inline-svg-2";
 import { NgApexchartsModule } from "ng-apexcharts";
 import { getCSSVariableValue } from "src/app/_metronic/kt/_utils";
 import { DataTablesModule } from "angular-datatables";
-import { dataTableConfig } from "./config/dataTables.config";
-import { DuoTuneList } from "../models/duotune.type";
+import { dataTableConfigs } from "./config/dataTables.config";
+import { tyDuoTune } from "../models/duotune.type";
 import { getDuotune } from "./function/duotune.func";
+import { swalDelete } from "./function/swal.func";
 
 export class BackPack {
 	/**
 	 * ```
-	 * 用途: 整理所有枚舉類
+	 * 用途: 匯集所有枚舉類
 	 * ```
 	 */
 	static enums = {
 		route: RoutePathEnum,
 		pic: PicPathEnum,
 	};
+	/**
+	 * ```
+	 * 用途: 匯集所有固定常數
+	 * ```
+	 */
 	static constants = {
 		routeTree: myRoutesTree,
 	};
-	static configs = { dataTable: dataTableConfig };
+	/**
+	 * ```
+	 * 用途: 匯集所有設定檔
+	 * ```
+	 */
+	static configs = { dataTable: dataTableConfigs, ngbModal: ngbModalOptions };
 	/**
 	 * ```
 	 * 時機: 建立Module後
@@ -43,15 +55,19 @@ export class BackPack {
 		TranslateModule,
 		NgApexchartsModule,
 	];
+	static swalDef = {
+		delete: swalDelete,
+	};
 	/**
 	 * ```
 	 * 用途: 取代原本的讀取CSS顏色功能
 	 * ```
 	 */
-	static getColor(color: BSAllColor) {
+	static getColor(color: tyBSColor) {
 		return getCSSVariableValue(`--bs-${color}`);
 	}
-	static getDuoTune(type: DuoTuneList, num: number) {
+
+	static getDuoTune(type: tyDuoTune, num: number) {
 		return getDuotune(type, num);
 	}
 	constructor() {}

@@ -1,4 +1,4 @@
-export type DuoTuneList =
+export type tyDuoTune =
 	| "abstract"
 	| "arrows"
 	| "art"
