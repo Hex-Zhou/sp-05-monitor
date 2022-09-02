@@ -11,7 +11,6 @@ import { BackPack } from "src/app/_astrix/shared/common/backpack.class";
 	styleUrls: ["./login-form2.component.scss"],
 })
 export class LoginForm2Component implements OnInit, OnDestroy {
-	@Input() theme: "light" | "primary" = "light";
 	PIC = BackPack.enums.pic;
 	defaultAuth: any = {
 		email: "admin@demo.com",

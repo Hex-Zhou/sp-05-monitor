@@ -14,22 +14,17 @@
 <!-- ng-template -->
 <!-- ng-template -->
 <ng-template #card let-item="item">
-	<div appBsColor [light]="true" [bgColor]="item.status" class="card hoverable">
+	<div class="card hoverable bg-light-{{ item.status }}">
 		<div class="card-body my-3">
-			<div appBsColor [textColor]="item.status" class="card-title fw-bolder fs-3 d-block">
+			<div class="card-title fw-bolder fs-3 d-block text-{{ item.status }}">
 				{{ item.title }}
 			</div>
-			<div class="fw-bolder">
-				<span appBsColor [textColor]="item.status" class="fs-3">{{ item.total }}</span>
-				<span appBsColor [textColor]="item.status" class="ms-3 fw-bolder fs-3">個</span>
+			<div class="fw-bolder text-{{ item.status }}">
+				<span class="fs-3">{{ item.total }}</span>
+				<span class="ms-3 fw-bolder fs-3">個</span>
 			</div>
 			<div [class]="'h-8px mt-3 w-100 bg-white bg-opacity-50 rounded'">
-				<div
-					appBsColor
-					[bgColor]="item.status"
-					class="rounded h-8px"
-					role="progressbar"
-					[style]="'width: ' + item.percent + '%'"></div>
+				<div class="rounded h-8px bg-{{ item.status }}" role="progressbar" [style]="'width: ' + item.percent + '%'"></div>
 			</div>
 		</div>
 	</div>

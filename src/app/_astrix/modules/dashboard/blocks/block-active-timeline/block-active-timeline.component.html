@@ -1,15 +1,12 @@
 <!-- end: Card Body-->
-<app-shared-common-card
-	[displayList]="['subtitle', 'header']"
-	mainTitle="事件時間軸"
-	subtitle="最後更新35分前">
+<app-shared-common-card [displayList]="['subtitle', 'header']" mainTitle="事件時間軸" subtitle="最後更新35分前">
 	<div body class="timeline-label">
 		<ng-container *ngFor="let item of timelineList">
 			<div class="timeline-item">
 				<div class="timeline-label fw-bolder text-gray-800 fs-6">{{ item.time }}</div>
 
 				<div class="timeline-badge">
-					<i appBsColor [textColor]="item.status" class="fa fa-genderless fs-1"></i>
+					<i class="fa fa-genderless fs-1 text-{{ item.status }}"></i>
 				</div>
 
 				<div class="fw-mormal timeline-content fw-bolder text-gray-800 ps-3">

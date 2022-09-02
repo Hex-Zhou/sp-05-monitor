@@ -1,4 +1,3 @@
-import { Subscription } from "rxjs";
 import {
 	AfterViewInit,
 	ChangeDetectorRef,
@@ -9,8 +8,8 @@ import {
 	ViewContainerRef,
 } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Subscription } from "rxjs";
 import { BackPack } from "src/app/_astrix/shared/common/backpack.class";
-import { FakeSiteApiService } from "./../../../../shared/apis/fake-site-api.service";
 import { DynamicTableComponent } from "./components/dynamic-table/dynamic-table.component";
 import { ModalEditComponent } from "./components/modal-edit/modal-edit.component";
 import { PageSiteList } from "./data/page-site-list.data";
@@ -46,10 +45,9 @@ export class PageSiteListComponent implements OnInit, AfterViewInit, OnDestroy {
 		this._setTableView();
 	}
 	//
-	openModal(item: iWebSite) {
+	openModal() {
 		const options = BackPack.configs.ngbModal.form;
 		const ref = this.modalServ.open(ModalEditComponent, options);
-		ref.componentInstance.site = item;
 	}
 	//
 	private _listenSiteList() {

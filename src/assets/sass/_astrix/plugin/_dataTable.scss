@@ -37,21 +37,21 @@
     .dataTables_paginate .paginate_button {}
 
     .dataTables_paginate .paginate_button {
-      border: 1px solid #fff !important;
+      border: 1px solid #CDCDDE !important;
       border-radius: 6px;
-      color: #fff !important;
+      color: #CDCDDE !important;
 
 
       &.disabled,
       &:hover,
       &:active {
-        color: #fff !important;
+        color: #CDCDDE !important;
       }
 
       &.current,
       &.current:hover,
       &:hover {
-        background: #009ef6 !important;
+        background: #212E48 !important;
       }
     }
   }

@@ -4,6 +4,7 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { BackPack } from "src/app/_astrix/shared/common/backpack.class";
 import { PageSiteList } from "../../data/page-site-list.data";
 import { PageSiteListStatusService } from "../../services/page-site-list-status.service";
+import { ModalEditComponent } from "../modal-edit/modal-edit.component";
 @Component({
 	templateUrl: "./dynamic-table.component.html",
 	styleUrls: ["./dynamic-table.component.scss"],
@@ -13,7 +14,12 @@ export class DynamicTableComponent implements OnInit, AfterViewInit {
 	//
 	@Input() list: iWebSite[] = [];
 	//
-	constructor(private fake: PageSiteListFakeApiService, private status: PageSiteListStatusService) {}
+
+	constructor(
+		private modal: NgbModal,
+		private fake: PageSiteListFakeApiService,
+		private status: PageSiteListStatusService
+	) {}
 	ngAfterViewInit(): void {}
 	ngOnInit(): void {}
 	//
@@ -25,7 +31,12 @@ export class DynamicTableComponent implements OnInit, AfterViewInit {
 			});
 		});
 	}
-	clickEdit(item: iWebSite) {}
+	clickEdit(item: iWebSite) {
+		console.log(item);
+		const options = BackPack.configs.ngbModal.form;
+		const ref = this.modal.open(ModalEditComponent, options);
+		ref.componentInstance.site = item;
+	}
 	//
 
 	getDuoTune = BackPack.getDuoTune;

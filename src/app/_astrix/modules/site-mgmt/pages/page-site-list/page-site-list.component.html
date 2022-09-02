@@ -1,6 +1,6 @@
-<app-shared-common-card [displayList]="['header', 'toolbar']" mainTitle="網站列表">
+<app-shared-common-card [displayList]="['header', 'toolbar']" mainTitle="網站列表" [heightAuto]="true">
 	<div toolbar class="d-flex gap-3 align-items-start">
-		<button class="btn btn-sm btn-primary">新增</button>
+		<button (click)="openModal()" class="btn btn-sm btn-light-primary fs-3 fw-bolder">新增</button>
 	</div>
 	<div body class="">
 		<ng-template #dynamic></ng-template>

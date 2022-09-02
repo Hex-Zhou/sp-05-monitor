@@ -1,3 +1,38 @@
 <app-shared-common-card [displayList]="['footer', 'header']" mainTitle="網站資訊">
-	<div [formGroup="from" body class="form">div</div>
+	<div [formGroup]="form" body class="form">
+		<article [class]="formStyle.row">
+			<div [class]="formStyle.label">網站名稱</div>
+			<div [class]="formStyle.inputDiv">
+				<input
+					appCtrlInvalid
+					[gp]="form"
+					[triggerBoo]="isSubmitted"
+					ctrlName="title"
+					formControlName="title"
+					type="text"
+					class="{{ formStyle.input }}" />
+			</div>
+		</article>
+		<article [class]="formStyle.row">
+			<div [class]="formStyle.label">網址</div>
+			<div [class]="formStyle.inputDiv">
+				<input
+					[triggerBoo]="isSubmitted"
+					appCtrlInvalid
+					[gp]="form"
+					ctrlName="link"
+					formControlName="link"
+					type="text"
+					[class]="formStyle.input" />
+			</div>
+		</article>
+	</div>
+
+	<div footer class="text-end">
+		<button (click)="modal.dismissAll()" class="btn btn-light-danger btn-sm fs-3 fw-bolder me-3">取消</button>
+		<button (click)="clickPrimaryBtn()" class="btn btn-light-primary btn-sm fs-3 fw-bolder">
+			<span *ngIf="site">變更</span>
+			<span *ngIf="!site">新增</span>
+		</button>
+	</div>
 </app-shared-common-card>
