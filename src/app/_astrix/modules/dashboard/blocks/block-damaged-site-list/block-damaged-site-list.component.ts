@@ -8,7 +8,6 @@ import {
 	ViewContainerRef,
 } from "@angular/core";
 import { DynamicDamagedSiteListTableComponent } from "./dynamic-damaged-site-list-table/dynamic-damaged-site-list-table.component";
-
 @Component({
 	selector: "app-block-damaged-site-list",
 	templateUrl: "./block-damaged-site-list.component.html",

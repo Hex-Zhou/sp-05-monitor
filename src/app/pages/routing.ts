@@ -29,9 +29,7 @@ const Routing: Routes = [
 	{
 		path: "crafted/widgets",
 		loadChildren: () =>
-			import("../modules/widgets-examples/widgets-examples.module").then(
-				(m) => m.WidgetsExamplesModule
-			),
+			import("../modules/widgets-examples/widgets-examples.module").then((m) => m.WidgetsExamplesModule),
 	},
 	{
 		path: "apps/chat",

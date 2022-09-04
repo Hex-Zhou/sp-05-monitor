@@ -5,10 +5,9 @@ import { PageSiteListFakeApiService } from "./../../services/page-site-list-fake
 import { FormBuilder, Validators } from "@angular/forms";
 import { FormGroup } from "@angular/forms";
 import { Component, OnInit } from "@angular/core";
-import { PageSiteList } from "../../data/page-site-list.data";
 import { PageSiteListStatusService } from "../../services/page-site-list-status.service";
 import Swal from "sweetalert2";
-
+import { iSite } from "src/app/_astrix/shared/models/site.model";
 @Component({
 	providers: [FormBuilder],
 	templateUrl: "./modal-edit.component.html",
@@ -16,7 +15,7 @@ import Swal from "sweetalert2";
 })
 export class ModalEditComponent implements OnInit {
 	form: FormGroup;
-	site?: iWebSite;
+	site?: iSite;
 	isSubmitted = false;
 	formStyle = {
 		row: "row mb-6 fs-3",
@@ -56,7 +55,7 @@ export class ModalEditComponent implements OnInit {
 		ob.subscribe((bool) => {
 			if (bool) Swal.fire({ icon: "success", title: slogan });
 			this.modal.dismissAll();
-			this.status.refreshSiteList$FormAPI();
+			this.status.nextSiteList$ByAPI();
 		});
 	}
 	private _patchValue() {
@@ -71,4 +70,3 @@ export class ModalEditComponent implements OnInit {
 		});
 	}
 }
-interface iWebSite extends PageSiteList.iWebSite {}

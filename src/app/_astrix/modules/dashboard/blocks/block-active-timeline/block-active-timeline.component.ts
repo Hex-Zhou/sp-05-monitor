@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-
 @Component({
 	selector: "app-block-active-timeline",
 	templateUrl: "./block-active-timeline.component.html",
@@ -8,16 +7,13 @@ import { Component, OnInit } from "@angular/core";
 export class BlockActiveTimelineComponent implements OnInit {
 	timelineList: iTimelineItem[] = fakeTimelineList;
 	constructor() {}
-
 	ngOnInit(): void {}
 }
-
 interface iTimelineItem {
 	desc: string;
 	time: string;
 	status: "success" | "danger" | "warning" | "primary" | "info";
 }
-
 const fakeTimelineList: iTimelineItem[] = [
 	{ desc: "夏洛特商城 連線異常", time: "07:08", status: "warning" },
 	{ desc: "365BMC品牌行銷策略數位手扎 連線異常", time: "08:20", status: "danger" },

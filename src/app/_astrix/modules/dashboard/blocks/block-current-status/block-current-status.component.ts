@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-
 @Component({
 	selector: "app-block-current-status",
 	templateUrl: "./block-current-status.component.html",
@@ -8,7 +7,6 @@ import { Component, OnInit } from "@angular/core";
 export class BlockCurrentStatusComponent implements OnInit {
 	StatusItems: iStatusItems = fake_StatusItems;
 	constructor() {}
-
 	ngOnInit(): void {}
 }
 interface iItem {

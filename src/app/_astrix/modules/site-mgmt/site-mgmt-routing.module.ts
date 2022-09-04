@@ -7,7 +7,6 @@ const routes: Routes = [
 	{ path: "list", component: PageSiteListComponent },
 	{ path: "", pathMatch: "full", redirectTo: route.siteList },
 ];
-
 @NgModule({
 	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule],

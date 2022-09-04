@@ -1,6 +1,6 @@
 import { ngbModalOptions } from "./config/ngbModal.config";
 import { myRoutesTree } from "./data/route-tree.data";
-import { tyBSColor } from "./../models/bs-all-color.type";
+import { tyBSColor } from "../types/bs-all-color.type";
 import { RoutePathEnum } from "./enum/route-path.enum";
 import { PicPathEnum } from "./enum/pic-path.enum";
 import { TranslateModule } from "@ngx-translate/core";
@@ -11,10 +11,9 @@ import { NgApexchartsModule } from "ng-apexcharts";
 import { getCSSVariableValue } from "src/app/_metronic/kt/_utils";
 import { DataTablesModule } from "angular-datatables";
 import { dataTableConfigs } from "./config/dataTables.config";
-import { tyDuoTune } from "../models/duotune.type";
+import { tyDuoTune } from "../types/duotune.type";
 import { getDuotune } from "./function/duotune.func";
 import { swalDelete } from "./function/swal.func";
-
 export class BackPack {
 	/**
 	 * ```
@@ -42,7 +41,6 @@ export class BackPack {
 	/**
 	 * ```
 	 * 時機: 建立Module後
-	 *
 	 * 用途: import 每個Module都要用的Mod
 	 * ```
 	 */
@@ -55,6 +53,11 @@ export class BackPack {
 		TranslateModule,
 		NgApexchartsModule,
 	];
+	/**
+	 * ```
+	 * 用途: 默認的swal格式清單
+	 * ```
+	 */
 	static swalDef = {
 		delete: swalDelete,
 	};
@@ -66,7 +69,11 @@ export class BackPack {
 	static getColor(color: tyBSColor) {
 		return getCSSVariableValue(`--bs-${color}`);
 	}
-
+	/**
+	 * ```
+	 * 用途: 用更容易的方式取得內建svg的路徑
+	 * ```
+	 */
 	static getDuoTune(type: tyDuoTune, num: number) {
 		return getDuotune(type, num);
 	}

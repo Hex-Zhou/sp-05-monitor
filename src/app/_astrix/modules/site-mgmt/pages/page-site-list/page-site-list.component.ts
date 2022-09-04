@@ -1,3 +1,4 @@
+import { iSite } from "./../../../../shared/models/site.model";
 import {
 	AfterViewInit,
 	ChangeDetectorRef,
@@ -8,14 +9,15 @@ import {
 	ViewContainerRef,
 } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { select, Store } from "@ngrx/store";
 import { Subscription } from "rxjs";
 import { BackPack } from "src/app/_astrix/shared/common/backpack.class";
+import { AppState } from "src/app/_astrix/store";
+import { setSites } from "src/app/_astrix/store/actions/site.actions";
 import { DynamicTableComponent } from "./components/dynamic-table/dynamic-table.component";
 import { ModalEditComponent } from "./components/modal-edit/modal-edit.component";
-import { PageSiteList } from "./data/page-site-list.data";
-import { PageSiteListFakeApiService } from "./services/page-site-list-fake-api.service";
 import { PageSiteListStatusService } from "./services/page-site-list-status.service";
-
+import { selectSite } from "src/app/_astrix/store/selectors/site.selectors";
 @Component({
 	selector: "app-page-site-list",
 	templateUrl: "./page-site-list.component.html",
@@ -26,20 +28,15 @@ export class PageSiteListComponent implements OnInit, AfterViewInit, OnDestroy {
 	private viewRef: ViewContainerRef;
 	//
 	subs: Subscription[] = [];
-	siteList: iWebSite[] = [];
+	siteList: iSite[] = [];
 	//
-	constructor(
-		private cdr: ChangeDetectorRef,
-		private fake: PageSiteListFakeApiService,
-		private status: PageSiteListStatusService,
-		private modalServ: NgbModal
-	) {}
+	constructor(private cdr: ChangeDetectorRef, private status: PageSiteListStatusService, private modalServ: NgbModal) {}
 	ngOnDestroy(): void {
 		this.subs.forEach((e) => e.unsubscribe());
 	}
 	ngOnInit(): void {
 		this._listenSiteList();
-		this.status.refreshSiteList$FormAPI();
+		this.status.nextSiteList$ByAPI();
 	}
 	ngAfterViewInit(): void {
 		this._setTableView();
@@ -47,7 +44,7 @@ export class PageSiteListComponent implements OnInit, AfterViewInit, OnDestroy {
 	//
 	openModal() {
 		const options = BackPack.configs.ngbModal.form;
-		const ref = this.modalServ.open(ModalEditComponent, options);
+		this.modalServ.open(ModalEditComponent, options);
 	}
 	//
 	private _listenSiteList() {
@@ -65,4 +62,3 @@ export class PageSiteListComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.cdr.detectChanges();
 	}
 }
-interface iWebSite extends PageSiteList.iWebSite {}

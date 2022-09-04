@@ -1,9 +1,7 @@
 @import "/src/assets/sass/_astrix/astrix";
-
 .panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   @include lg {
     grid-template-columns: 1fr;
   }

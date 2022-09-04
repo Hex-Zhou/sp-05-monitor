@@ -8,7 +8,6 @@ import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { PageA1Component } from "./pages/page-a1/page-a1.component";
 import { DynamicDamagedSiteListTableComponent } from "./blocks/block-damaged-site-list/dynamic-damaged-site-list-table/dynamic-damaged-site-list-table.component";
 import { BlockActiveTimelineComponent } from "./blocks/block-active-timeline/block-active-timeline.component";
-
 @NgModule({
 	declarations: [
 		PageA1Component,

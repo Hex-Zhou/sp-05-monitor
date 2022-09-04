@@ -1,10 +1,10 @@
-import { PageSiteListFakeApiService } from "./../../services/page-site-list-fake-api.service";
-import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { AfterViewInit, Component, Input, OnInit } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { BackPack } from "src/app/_astrix/shared/common/backpack.class";
-import { PageSiteList } from "../../data/page-site-list.data";
+import { iSite } from "src/app/_astrix/shared/models/site.model";
 import { PageSiteListStatusService } from "../../services/page-site-list-status.service";
 import { ModalEditComponent } from "../modal-edit/modal-edit.component";
+import { PageSiteListFakeApiService } from "./../../services/page-site-list-fake-api.service";
 @Component({
 	templateUrl: "./dynamic-table.component.html",
 	styleUrls: ["./dynamic-table.component.scss"],
@@ -12,9 +12,8 @@ import { ModalEditComponent } from "../modal-edit/modal-edit.component";
 export class DynamicTableComponent implements OnInit, AfterViewInit {
 	dtOptions = BackPack.configs.dataTable.a;
 	//
-	@Input() list: iWebSite[] = [];
+	@Input() list: iSite[] = [];
 	//
-
 	constructor(
 		private modal: NgbModal,
 		private fake: PageSiteListFakeApiService,
@@ -27,18 +26,16 @@ export class DynamicTableComponent implements OnInit, AfterViewInit {
 		BackPack.swalDef.delete().then((r) => {
 			if (!r.isConfirmed) return;
 			this.fake.delete(id).subscribe((bool) => {
-				if (bool) this.status.refreshSiteList$FormAPI();
+				if (bool) this.status.nextSiteList$ByAPI();
 			});
 		});
 	}
-	clickEdit(item: iWebSite) {
+	clickEdit(item: iSite) {
 		console.log(item);
 		const options = BackPack.configs.ngbModal.form;
 		const ref = this.modal.open(ModalEditComponent, options);
 		ref.componentInstance.site = item;
 	}
 	//
-
 	getDuoTune = BackPack.getDuoTune;
 }
-interface iWebSite extends PageSiteList.iWebSite {}

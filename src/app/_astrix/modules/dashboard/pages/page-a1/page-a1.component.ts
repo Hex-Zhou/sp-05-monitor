@@ -1,5 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-
+import { Component, OnInit } from "@angular/core";
 @Component({
 	selector: "app-page-a1",
 	templateUrl: "./page-a1.component.html",
@@ -7,6 +6,5 @@ import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 })
 export class PageA1Component implements OnInit {
 	constructor() {}
-
 	ngOnInit(): void {}
 }

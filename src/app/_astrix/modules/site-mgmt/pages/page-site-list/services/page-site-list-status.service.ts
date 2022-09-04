@@ -1,23 +1,23 @@
-import { PageSiteListFakeApiService } from "./page-site-list-fake-api.service";
-import { filter } from "rxjs/operators";
-import { BehaviorSubject } from "rxjs";
+import { iSite } from "./../../../../../shared/models/site.model";
 import { Injectable } from "@angular/core";
-import { PageSiteList } from "../data/page-site-list.data";
-
+import { BehaviorSubject } from "rxjs";
+import { filter } from "rxjs/operators";
+import { PageSiteListFakeApiService } from "./page-site-list-fake-api.service";
 @Injectable({
 	providedIn: "root",
 })
 export class PageSiteListStatusService {
-	private SiteList$ = new BehaviorSubject<iWebSite[] | null>(null);
+	private SiteList$ = new BehaviorSubject<iSite[] | null>(null);
 	constructor(private api: PageSiteListFakeApiService) {}
 	getSiteList$() {
 		return this.SiteList$.asObservable().pipe(filter((e) => e !== null));
 	}
-	nextSiteList$(siteList: iWebSite[]) {
+	nextSiteList$(siteList: iSite[]) {
 		this.SiteList$.next(siteList);
 	}
-	refreshSiteList$FormAPI() {
-		this.api.getAll().subscribe((r) => this.nextSiteList$(r));
+	nextSiteList$ByAPI() {
+		this.api.getAll().subscribe((r) => {
+			this.nextSiteList$(r);
+		});
 	}
 }
-interface iWebSite extends PageSiteList.iWebSite {}

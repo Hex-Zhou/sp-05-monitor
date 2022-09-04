@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { of } from "rxjs";
-import { PageSiteList } from "../data/page-site-list.data";
-
+import { fakeData_Site } from "src/app/_astrix/shared/common/data/site.data";
+import { iSite } from "src/app/_astrix/shared/models/site.model";
 @Injectable({
 	providedIn: "root",
 })
 export class PageSiteListFakeApiService {
 	private localKey = "siteList";
-	private list: iType[] = PageSiteList.fakeWebsites;
+	private list: iType[] = fakeData_Site;
 	constructor() {
 		if (this._getLocal()) {
 			this.list = this._getLocal();
@@ -46,7 +46,6 @@ export class PageSiteListFakeApiService {
 			return of(false);
 		}
 	}
-
 	private _getLocal() {
 		let result;
 		try {
@@ -60,4 +59,4 @@ export class PageSiteListFakeApiService {
 		localStorage.setItem(this.localKey, JSON.stringify(item));
 	}
 }
-interface iType extends PageSiteList.iWebSite {}
+interface iType extends iSite {}

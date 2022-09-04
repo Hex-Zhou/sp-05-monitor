@@ -2,7 +2,6 @@ import { BackPack } from "./../../../../shared/common/backpack.class";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { ApexNonAxisChartSeries, ApexChart, ApexResponsive, ChartComponent } from "ng-apexcharts";
 import { getCSSVariableValue } from "src/app/_metronic/kt/_utils";
-
 @Component({
 	selector: "app-block-status-pie-chart",
 	templateUrl: "./block-status-pie-chart.component.html",
@@ -14,10 +13,8 @@ export class BlockStatusPieChartComponent implements OnInit {
 	constructor() {
 		this.chartOptions = getChartOptions(320);
 	}
-
 	ngOnInit(): void {}
 }
-
 function getChartOptions(height: number) {
 	const labelColor = getCSSVariableValue("--bs-gray-500");
 	const borderColor = getCSSVariableValue("--bs-gray-200");
@@ -54,7 +51,6 @@ function getChartOptions(height: number) {
 			width: 2,
 			colors: ["transparent"],
 		},
-
 		fill: {
 			opacity: 1,
 		},

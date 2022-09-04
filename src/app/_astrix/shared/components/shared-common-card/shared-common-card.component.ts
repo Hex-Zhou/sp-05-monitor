@@ -12,7 +12,6 @@ export class SharedCommonCardComponent implements OnInit {
 	@Input() heightAuto: boolean = false;
 	@Input() mainTitle: string = "標題";
 	@Input() subtitle: string = "子標題";
-
 	/**
 	 * ```
 	 * 用途: 輸入 打算顯示的元件名
@@ -51,7 +50,6 @@ interface iDisplay {
 	toolbar: boolean;
 	footer: boolean;
 }
-
 const initIsDisplay: iDisplay & Omit<any, keyof iDisplay> = {
 	header: false,
 	subtitle: false,

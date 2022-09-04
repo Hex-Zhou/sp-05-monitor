@@ -1,5 +1,4 @@
-import { tyDuoTune } from "./../../models/duotune.type";
-
+import { tyDuoTune } from "../../types/duotune.type";
 export function getDuotune(type: tyDuoTune, num: number) {
 	let str = String(num);
 	if (num < 10) str = "0" + str;

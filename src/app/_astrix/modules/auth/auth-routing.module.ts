@@ -5,15 +5,20 @@ import { PageLogin1Component } from "./pages/login/page-login1/page-login1.compo
 import { PageLogin2Component } from "./pages/login/page-login2/page-login2.component";
 const url = BackPack.enums.route;
 const routes: Routes = [
-	{ path: "login", component: PageLogin1Component },
-	{ path: "login2", component: PageLogin2Component },
+	{
+		path: "login",
+		component: PageLogin1Component,
+	},
+	{
+		path: "login2",
+		component: PageLogin2Component,
+	},
 	{
 		path: "",
 		redirectTo: url.dashboard,
 		pathMatch: "full",
 	},
 ];
-
 @NgModule({
 	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule],

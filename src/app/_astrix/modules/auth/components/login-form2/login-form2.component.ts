@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, Subscription, first } from "rxjs";
 import { AuthService, UserModel } from "src/app/modules/auth";
 import { BackPack } from "src/app/_astrix/shared/common/backpack.class";
-
 @Component({
 	selector: "app-login-form2",
 	templateUrl: "./login-form2.component.html",
@@ -70,7 +69,6 @@ export class LoginForm2Component implements OnInit, OnDestroy {
 			});
 		this.unsubscribe.push(loginSubscr);
 	}
-
 	ngOnDestroy() {
 		this.unsubscribe.forEach((sb) => sb.unsubscribe());
 	}

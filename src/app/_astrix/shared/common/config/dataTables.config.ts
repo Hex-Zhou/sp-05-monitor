@@ -10,7 +10,6 @@ const dataTablesConfig_A: DataTables.Settings = {
 		lengthMenu: "_MENU_",
 	},
 };
-
 export const dataTableConfigs = {
 	a: dataTablesConfig_A,
 };

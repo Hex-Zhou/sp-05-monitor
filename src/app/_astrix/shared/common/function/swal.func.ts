@@ -1,5 +1,4 @@
 import Swal, { SweetAlertResult } from "sweetalert2";
-
 export const swalDelete = (): Promise<SweetAlertResult<any>> => {
 	return Swal.fire({
 		icon: "question",
