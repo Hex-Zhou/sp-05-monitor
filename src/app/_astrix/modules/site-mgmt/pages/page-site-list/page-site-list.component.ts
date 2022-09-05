@@ -1,4 +1,3 @@
-import { iSite } from "./../../../../shared/models/site.model";
 import {
 	AfterViewInit,
 	ChangeDetectorRef,
@@ -9,15 +8,12 @@ import {
 	ViewContainerRef,
 } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { select, Store } from "@ngrx/store";
 import { Subscription } from "rxjs";
 import { BackPack } from "src/app/_astrix/shared/common/backpack.class";
-import { AppState } from "src/app/_astrix/store";
-import { setSites } from "src/app/_astrix/store/actions/site.actions";
+import { iSite } from "./../../../../shared/models/site.model";
 import { DynamicTableComponent } from "./components/dynamic-table/dynamic-table.component";
 import { ModalEditComponent } from "./components/modal-edit/modal-edit.component";
 import { PageSiteListStatusService } from "./services/page-site-list-status.service";
-import { selectSite } from "src/app/_astrix/store/selectors/site.selectors";
 @Component({
 	selector: "app-page-site-list",
 	templateUrl: "./page-site-list.component.html",
