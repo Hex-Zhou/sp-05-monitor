@@ -9,17 +9,19 @@ import { StoreModule } from "@ngrx/store";
 import { reducers, metaReducers } from "./store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { environment } from "../../environments/environment";
+import { PlaygroundModule } from "./modules/playground/playground.module";
 @NgModule({
-	declarations: [],
-	imports: [
-		AstrixLayoutModule,
-		SiteMgmtModule,
-		DashboardModule,
-		CommonModule,
-		AstrixRoutingModule,
-		BackPack.commonModules,
-		StoreModule.forRoot(reducers, { metaReducers }),
-		!environment.production ? StoreDevtoolsModule.instrument() : [],
-	],
+  declarations: [],
+  imports: [
+    AstrixLayoutModule,
+    SiteMgmtModule,
+    PlaygroundModule,
+    DashboardModule,
+    CommonModule,
+    AstrixRoutingModule,
+    BackPack.commonModules,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+  ],
 })
 export class AstrixModule {}

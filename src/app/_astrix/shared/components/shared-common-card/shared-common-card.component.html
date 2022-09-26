@@ -1,17 +1,21 @@
-<div class="card card-fulid" [ngClass]="{ 'h-100': !heightAuto }">
-	<div *ngIf="isDisplay.header" class="card-header border-0 mt-4">
-		<div class="card-title d-flex align-items-start justify-content-start flex-column">
-			<span class="fw-bolder">{{ mainTitle }}</span>
-			<span *ngIf="isDisplay.subtitle" class="text-muted fw-bolder fs-7">{{ subtitle }}</span>
-		</div>
-		<ng-container *ngIf="isDisplay.toolbar">
-			<ng-content select="[toolbar]"></ng-content>
-		</ng-container>
-	</div>
-	<div class="card-body">
-		<ng-content select="[body]"></ng-content>
-	</div>
-	<div *ngIf="isDisplay.footer" class="card-footer">
-		<ng-content select="[footer]"></ng-content>
-	</div>
+<div class="card card-fulid {{ cardCSS }}">
+  <div *ngIf="isDisplay.header" class="card-header border-0 mt-4">
+    <div class="card-title d-flex align-items-start justify-content-start flex-column">
+      <span class="fw-bolder">{{ mainTitle }}</span>
+      <span *ngIf="isDisplay.subtitle" class="text-muted fw-bolder fs-7">{{ subtitle }}</span>
+    </div>
+    <ng-container *ngIf="isDisplay.toolbar">
+      <div class="card-toolbar {{ toolbarCSS }}">
+        <ng-content select="[toolbar]"></ng-content>
+      </div>
+    </ng-container>
+  </div>
+  <div class="card-body {{ bodyCSS }}">
+    <ng-content select="[body]"></ng-content>
+  </div>
+  <ng-container *ngIf="isDisplay.footer">
+    <div class="card-footer {{ footerCSS }}">
+      <ng-content select="[footer]"></ng-content>
+    </div>
+  </ng-container>
 </div>

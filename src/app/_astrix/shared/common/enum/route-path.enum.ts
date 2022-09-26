@@ -3,4 +3,5 @@ export enum RoutePathEnum {
   login = "/auth/login2",
   login2 = "/auth/login",
   siteList = "/dev/site/list",
+  playGround = "dev/playground",
 }
