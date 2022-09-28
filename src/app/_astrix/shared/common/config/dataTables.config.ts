@@ -4,10 +4,12 @@
  * ```
  */
 const dataTablesConfig_A: DataTables.Settings = {
+  order: [2, "asc"],
   ordering: true,
   destroy: true,
   searching: true,
   processing: false,
+  lengthMenu: [3, 25, 50, 75, 100],
   dom: " <'DT_astrix DT_A' ftr><'DT_footer mt-5'<'left'li><'right'p>>",
   language: {
     search: "關鍵字 : ",
