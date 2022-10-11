@@ -17,11 +17,14 @@ export class BlockJitSiComponent implements OnInit, AfterViewInit {
   isVideoMuted = false;
   constructor(private router: Router) {}
   ngOnInit(): void {
-    this.room = "bwb-bfqi-vmh"; // Set your room name
+    this.room = "盜版Club House";
     this.user = {
-      name: "Akash Verma", // Set your username
+      name: "張震嶽",
+  
     };
+
   }
+  
   ngAfterViewInit(): void {
     this.options = {
       roomName: this.room,
@@ -31,7 +34,7 @@ export class BlockJitSiComponent implements OnInit, AfterViewInit {
       interfaceConfigOverwrite: {
         // overwrite interface properties
       },
-      parentNode: document.querySelector("#jitsi-iframe"),
+      parentNode: document.querySelector("#jit-si-iframe"),
       userInfo: {
         displayName: this.user.name,
       },
